@@ -1,0 +1,4 @@
+desk
+chair
+bed
+clothes
