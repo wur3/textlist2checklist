@@ -1,3 +1,3 @@
-Goal:  
-/t.txt line parser that generated the checklist into Tkinter
-/t convertible back to .txt?
+Goal:</br>
+.txt line parser that generated the checklist into Tkinter</br>
+convertible back to .txt?</br>
