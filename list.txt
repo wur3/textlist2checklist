@@ -2,3 +2,8 @@ desk
 chair
 bed
 clothes
+cabbage
+more
+and
+longer
+applesauce
