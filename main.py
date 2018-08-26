@@ -1,21 +1,18 @@
 from tkinter import *
-
-item_list = []
+from func import Functions
 
 ### Section I: txt parsing
-filename = "list.txt"
+file = "list.txt"
 
 # filename = input("Name of .txt file:\n")
-textfile = open(filename, 'r')
-for line in textfile.readlines():
-    item_list.append(line.strip())
+list = Functions.extract(file)
 
 ### Section II: Tkinter
 root = Tk()
 root.title("Check List")
 Label(root, text = "Welcome to textlist2checklist!", padx = 10, \
                         pady = 4, justify = CENTER).pack()
-for item in item_list:
+for item in list:
     checkvar = BooleanVar()
     cb = Checkbutton(root, text = item, variable = checkvar, \
                         anchor = 'w', height = 1, width = 15)
