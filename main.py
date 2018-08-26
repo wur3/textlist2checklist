@@ -4,7 +4,7 @@ from func import Functions
 ### Section I: txt parsing
 file = "list.txt"
 
-# filename = input("Name of .txt file:\n")
+# file = input("Name of .txt file:\n")
 list = Functions.extract(file)
 
 ### Section II: Tkinter
