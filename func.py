@@ -4,9 +4,11 @@ class Functions:
         textfile = open(filename, 'r')
         for line in textfile.readlines():
             item_list.append(line.strip())
+        textfile.close()
         return item_list
 
-    def save(filename):
-        textfile = open(filename, 'r')
-        for line in textfile.readlines():
-            pass
+    def save(item_list, filename):
+        textfile = open(filename, 'w')
+        for line in item_list:
+            textfile.write() #thats how you write to a file
+        textfile.close()
