@@ -32,13 +32,13 @@ class Checklist:
         #Clear button
         self.clear_button = Button(self.root, text = "Clear", \
             command = lambda: self.clear(), \
-            padx = 5, pady = 2)
+            fg = "red4", padx = 5, pady = 2)
         self.clear_button.pack()
 
         #Save button
         self.save_button = Button(self.root, text = "Save", \
             command = lambda: self.save(), \
-            padx = 5, pady = 2)
+            fg = "green4", padx = 5, pady = 2)
         self.save_button.pack()
 
     #Returns list of strings from filename
@@ -60,19 +60,21 @@ class Checklist:
             self.buttons.append(cb)
             self.cb_val.append(checkvar)
 
+    #Sets all checkbox states to false (unchecked)
     def clear(self):
         for i in range(len(self.cb_val)):
             self.cb_val[i].set(False)
 
-
     #Saves current state of checkboxes
     def save(self):
-        #textfile = open(filename, 'w')
+        save_loc = filedialog.asksaveasfilename(initialdir = "/Desktop/", \
+            defaultextension=".txt", title = "Save file", \
+            filetypes = (("Text File", "*.txt"),("All Files","*.*")))
+        savefile = open( save_loc, "w")
         for i in range(len(self.buttons)):
             #if checked
             if (self.cb_val[i].get()):
-                print ("[X] " + self.buttons[i].cget("text"))
+                savefile.write("[X] " + self.buttons[i].cget("text") + "\n")
             else:
-                print ("[ ] " + self.buttons[i].cget("text"))
-            #textfile.write() #thats how you write to a file
-        #textfile.close()
+                savefile.write("[ ] " + self.buttons[i].cget("text") + "\n")
+        savefile.close()
