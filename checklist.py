@@ -1,10 +1,15 @@
 from tkinter import *
+from tkinter import filedialog
 
 class Checklist:
-
     def __init__(self, root):
-        self.filename = "list.txt"
-        #self.filename = input("Name of .txt file:\n")
+        #file dialog for file to read from
+        self.filename = filedialog.askopenfilename(initialdir = "/Desktop/", \
+            title = "Select file",filetypes = (("Text File", "*.txt"),("All Files","*.*")))
+
+        if not self.filename:
+            print ("No file location chosen. Program terminated.")
+            raise SystemExit
 
         # list of Checkbutton objects
         self.buttons = []
@@ -20,13 +25,23 @@ class Checklist:
         # list of string items extracted from file
         self.item_list = []
         self.item_list = self.extract()
+
+        #List of Checkbuttons
         self.make_list()
 
+        #Clear button
+        self.clear_button = Button(self.root, text = "Clear", \
+            command = lambda: self.clear(), \
+            padx = 5, pady = 2)
+        self.clear_button.pack()
+
+        #Save button
         self.save_button = Button(self.root, text = "Save", \
             command = lambda: self.save(), \
             padx = 5, pady = 2)
         self.save_button.pack()
 
+    #Returns list of strings from filename
     def extract(self):
         list = []
         textfile = open(self.filename, 'r')
@@ -35,6 +50,7 @@ class Checklist:
         textfile.close()
         return list
 
+    #Adds a checkbutton and checkbox variable for each item in item_list
     def make_list(self):
         for item in self.item_list:
             checkvar = BooleanVar()
@@ -44,10 +60,19 @@ class Checklist:
             self.buttons.append(cb)
             self.cb_val.append(checkvar)
 
+    def clear(self):
+        for i in range(len(self.cb_val)):
+            self.cb_val[i].set(False)
+
+
+    #Saves current state of checkboxes
     def save(self):
         #textfile = open(filename, 'w')
         for i in range(len(self.buttons)):
-            print (self.buttons[i].cget("text"))
-            print (self.cb_val[i].get())
+            #if checked
+            if (self.cb_val[i].get()):
+                print ("[X] " + self.buttons[i].cget("text"))
+            else:
+                print ("[ ] " + self.buttons[i].cget("text"))
             #textfile.write() #thats how you write to a file
         #textfile.close()
