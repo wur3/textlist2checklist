@@ -1,10 +1,15 @@
 from tkinter import *
 from tkinter import filedialog
+import os
+
+#Edit these to change where you open from and save to
+OPEN_FROM = os.getcwd()
+SAVE_FROM = os.getcwd()
 
 class Checklist:
     def __init__(self, root):
         #file dialog for file to read from
-        self.filename = filedialog.askopenfilename(initialdir = "/Desktop/", \
+        self.filename = filedialog.askopenfilename(initialdir = OPEN_FROM, \
             title = "Select file",filetypes = (("Text File", "*.txt"),("All Files","*.*")))
 
         if not self.filename:
@@ -72,7 +77,7 @@ class Checklist:
 
     #Saves current state of checkboxes
     def save(self):
-        save_loc = filedialog.asksaveasfilename(initialdir = "/Desktop/", \
+        save_loc = filedialog.asksaveasfilename(initialdir = SAVE_FROM, \
             defaultextension=".txt", title = "Save file", \
             filetypes = (("Text File", "*.txt"),("All Files","*.*")))
         savefile = open( save_loc, "w")
