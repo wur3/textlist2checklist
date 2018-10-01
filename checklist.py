@@ -53,7 +53,12 @@ class Checklist:
     #Adds a checkbutton and checkbox variable for each item in item_list
     def make_list(self):
         for item in self.item_list:
-            checkvar = BooleanVar()
+            checkvar = BooleanVar(False)
+            if item.startswith("[X] "):
+                item = item[4:]
+                checkvar.set(True)
+            elif item.startswith("[ ] "):
+                item = item[4:]
             cb = Checkbutton(self.root, text = item, variable = checkvar, \
                                 anchor = 'w', height = 1, width = 15)
             cb.pack()
