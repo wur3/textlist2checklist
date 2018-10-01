@@ -1,6 +1,6 @@
 # textlist2checklist
 1. Select .txt file to open
-    * Capable of reading files formateed like those from #4.
+    * Capable of reading files formatted like those from #4.
 2. Have fun with checkboxes
    * [ ] laundry
    * [x] cookies
