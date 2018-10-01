@@ -6,8 +6,8 @@
   
 3. Save state of checkboxes with "Save" button
 
-> [ ] laundry
->
-> [X] cookies
->
-> [ ] homework
+   * [ ] laundry
+
+   * [X] cookies
+
+   * [ ] homework
