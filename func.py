@@ -1,3 +1,5 @@
+from tkinter import *
+
 class Functions:
     def extract(filename):
         item_list = []
@@ -7,8 +9,11 @@ class Functions:
         textfile.close()
         return item_list
 
-    def save(item_list, filename):
-        textfile = open(filename, 'w')
-        for line in item_list:
-            textfile.write() #thats how you write to a file
-        textfile.close()
+    def save(widget_list, filename):
+        #textfile = open(filename, 'w')
+        for widget in widget_list:
+
+            print (widget[0].cget("text"))
+            print (widget[1].get())
+            #textfile.write() #thats how you write to a file
+        #textfile.close()
