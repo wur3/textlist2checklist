@@ -3,7 +3,7 @@
     * Capable of reading files formateed like those from #4.
 2. Have fun with checkboxes
    * [ ] laundry
-   * [ ] cookies
+   * [x] cookies
    * [ ] homework
    
 3. Reset checklist with "Clear" button(?)
