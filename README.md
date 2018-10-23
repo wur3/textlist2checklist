@@ -14,9 +14,10 @@ To run: `python main.py`
 3. Reset checklist with "Clear" button(?)
   
 4. Save state of checkboxes with "Save" button (".txt" extension)
-
+```
    [ ] laundry
 
    [X] cookies
 
    [ ] homework
+```
