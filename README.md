@@ -4,7 +4,10 @@ Reads a .txt file of items and generates an interactive checklist with "Save" an
 
 # Tutorial
 
-To run: `python main.py`
+To run: 
+```bash
+$ python main.py
+```
 
 1. Select .txt file to open (enjoy the file explorer)
     * Capable of reading files formatted like those from #4.
