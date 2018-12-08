@@ -65,7 +65,8 @@ class Checklist:
             elif item.startswith("[ ] "):
                 item = item[4:]
             cb = Checkbutton(self.root, text = item, variable = checkvar, \
-                                anchor = 'w', height = 1, width = 15)
+                                anchor = 'w', width = 25, wraplength = self.root.winfo_width())
+            cb.bind('<Configure>', lambda e: cb.config(wraplength=self.root.winfo_width()))
             cb.pack()
             self.buttons.append(cb)
             self.cb_val.append(checkvar)
