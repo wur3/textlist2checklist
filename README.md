@@ -6,7 +6,7 @@ Reads a .txt file of items and generates an interactive checklist with "Save" an
 
 To run: 
 ```bash
-$ python main.py
+$ python3 main.py
 ```
 
 1. Select .txt file to open (enjoy the file explorer)
